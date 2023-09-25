@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h3><a href="">Ariya Panna</a></h3>
+
+        <div class="menu-desktop">
+            <a class="active" id="home" href="">Home</a>
+            <a href="#detail-information">About</a>
+            <a href="#certificates">Certificates</a>
+        </div>
+
+        <div class="menu-mobile">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="middle">
+        <div class="left-side">
+            <h1>Hello,</h1>
+            <h1>I'm <span style="color: #017FBD;">Ariya</span></h1>
+            <h1>Front End Web Developer</h1>
+
+            <div class="mobile-introduce">
+                <h2>Hello, I'm <span style="color: #017FBD">Ariya</span></h2>
+                <h2>Front End Web Developer</h2>
+            </div>
+
+            <div class="icon-group">
+                <a href="https://github.com/BabyJnL"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ariya-panna-3a383428b/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""></a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <img src="assest/photo-min.png" alt="photo" width="90%">
+        </div>
+    </section>
+
+    <section id="quotes">
+        <div class="quotes-box">
+            <h1 class="runningText">" Great service is not just serving, but exceeding expectations. "</h1>
+        </div>
+    </section>
+
+    <section id="detail-information">
+        <div class="about-me">
+            <h1>SUMMARY</h1>
+            <div class="summary">
+                <img src="assest/photo.jpg" alt="">
+                <p style="text-align: justify; line-height: 40px;">I graduated from Tarakanita Citra Raya Senior High School, and I'm currently pursuing a degree in the Computer Science faculty at Pradita University, Demonstrated exceptional aptitude in programming and web development, to be a full-stack developer. I enrolled in a 2-week Fundamental Software Engineer Program offered by RevoU, also online digital course as a web developer from Coding Studio.</p>
+            </div>
+        </div>
+
+        <div class="projects">
+            <h1>PROJECTS</h1>
+            <div class="showcase-projects">
+                <img src="assest/project-1.png" alt="">
+                <img src="assest/project-2.png" alt="">
+                <img src="assest/project-3.png" alt="">
+                <img src="assest/project-4.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h1>CERTIFICATES</h1>
+        <div class="showcase-certificates">
+            <img src="assest/certificate-1.png" alt="">
+            <img src="assest/Certificate_Fundamental-Front-End-Web-Development-I_Ariya-Panna-1.png" alt="">
+        </div>
+    </section>
+
+    <footer>
+        <h2`>©  Ariya Panna</h2>
+    </footer>
+    <script>
+        const textElement = document.querySelector(".runningText");
+        const text = textElement.textContent;
+        textElement.textContent = ""; // Kosongkan teks asli
+    
+        let index = 0;
+        const speed = 50; // Kecepatan penulisan karakter (ms)
+    
+        function typeWriter() {
+        if (index < text.length) {
+            textElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        }
+        }
+    
+        // Panggil fungsi untuk memulai efek typewriter setelah halaman dimuat
+        window.onload = function () {
+        typeWr
