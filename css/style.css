@@ -14,7 +14,6 @@ body {
 #detail-information {
     width: 100%;
     margin-bottom: 50px;
-    border-bottom: 1px solid #c5c5c5;
 }
 
 #certificates {
@@ -31,6 +30,7 @@ body {
         align-items: center;
         padding: 0 256px;
         position: sticky;
+        z-index: 100;
         top: 0;
         background-color: #F4F4F4;
     }
@@ -50,7 +50,7 @@ body {
         color: black;
     }
     
-    nav .menu-desktop .active {
+    nav .menu-desktop .nav-link.active {
         box-sizing: border-box;
         border-bottom: 2px solid #017FBD;
         padding-bottom: 10px;
@@ -105,6 +105,7 @@ body {
     
     #middle .right-side img {
         border-radius: 50%;
+        animation: bounceIn 1.5s;
     }
     
     #quotes {
@@ -172,6 +173,12 @@ body {
 
     #detail-information .projects .showcase-projects img {
         width: 40%;
+        filter: grayscale(1);
+    }
+
+    #detail-information .projects .showcase-projects img:hover {
+        transform: scale(1.1);
+        filter: none;
     }
 
     #certificates {
@@ -187,7 +194,6 @@ body {
         justify-content: center;
         gap: 50px;
         padding-top: 25px;
-        margin-bottom: 50px;
     }
 
     #certificates .showcase-certificates img {
@@ -199,7 +205,7 @@ body {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        height: 15vh;
+        height: 10vh;
         background-color: #017FBD;
         color: white;
     }
@@ -217,6 +223,7 @@ body {
         padding: 0 24px;
         position: sticky;
         top: 0;
+        z-index: 100;
         background-color: #F4F4F4;
     }
 
@@ -279,6 +286,7 @@ body {
 
     #middle .left-side .icon-group a:hover {
         color: #017FBD;
+        transition: delay;
     }
 
     #middle .right-side {
@@ -288,6 +296,7 @@ body {
 
     #middle .right-side img {
         border-radius: 50%;
+        animation: bounceIn 1.5s;
     }
 
     #quotes {
@@ -306,5 +315,25 @@ body {
     #quotes .quotes-box h1 {
         font-size: 20px;
         text-align: center;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        filter: opacity(0);
+        transform: translateY(-20px);
+    }
+
+    35% {
+        filter: opacity(0.25);
+        transform: translateY(0);
+    }
+    70% {
+        filter: opacity(0.5);
+        transform: translateY(-10px);
+    }
+    100% {
+        filter: opacity(1);
+        transform: translate(0);
     }
 }

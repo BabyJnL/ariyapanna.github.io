@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
+    <nav id="header">
         <h3><a href="">Ariya Panna</a></h3>
 
         <div class="menu-desktop">
-            <a class="active" id="home" href="">Home</a>
-            <a href="#detail-information">About</a>
-            <a href="#certificates">Certificates</a>
+            <a class="nav-link active" href="#middle">Home</a>
+            <a class="nav-link" href="#detail-information">Detail</a>
         </div>
 
         <div class="menu-mobile">
@@ -37,7 +36,6 @@
             <div class="icon-group">
                 <a href="https://github.com/BabyJnL"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/ariya-panna-3a383428b/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href=""></a>
             </div>
         </div>
 
@@ -70,14 +68,14 @@
                 <img src="assest/project-4.png" alt="">
             </div>
         </div>
-    </section>
 
-    <section id="certificates">
-        <h1>CERTIFICATES</h1>
-        <div class="showcase-certificates">
-            <img src="assest/certificate-1.png" alt="">
-            <img src="assest/Certificate_Fundamental-Front-End-Web-Development-I_Ariya-Panna-1.png" alt="">
-        </div>
+        <section id="certificates">
+            <h1>CERTIFICATES</h1>
+            <div class="showcase-certificates">
+                <img src="assest/certificate-1.png" alt="">
+                <img src="assest/Certificate_Fundamental-Front-End-Web-Development-I_Ariya-Panna-1.png" alt="">
+            </div>
+        </section>
     </section>
 
     <footer>
@@ -102,7 +100,37 @@
         // Panggil fungsi untuk memulai efek typewriter setelah halaman dimuat
         window.onload = function () {
         typeWriter();
-        };
+        }
+
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        // Fungsi untuk mengecek tautan yang aktif berdasarkan posisi scroll
+        function setActiveLink() {
+            const scrollPosition = window.scrollY;
+
+            // Loop melalui semua tautan navbar
+            navLinks.forEach((link) => {
+                const sectionId = link.getAttribute("href").substring(1); // Mendapatkan id section dari href
+
+                // Mendapatkan elemen section berdasarkan id
+                const section = document.getElementById(sectionId);
+
+                // Jika section ditemukan dan posisi scroll berada dalam section tersebut
+                if (section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
+                    // Hapus class "active" dari semua tautan navbar
+                    navLinks.forEach((navLink) => {
+                        navLink.classList.remove("active");
+                    });
+
+                    // Tambahkan class "active" ke tautan yang sesuai dengan section
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        // Panggil setActiveLink saat halaman dimuat dan saat halaman digulir
+        window.addEventListener("load", setActiveLink);
+        window.addEventListener("scroll", setActiveLink);
     </script>
 </body>
 </html>
