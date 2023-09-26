@@ -397,6 +397,7 @@ body {
     #certificates  h1 {
         border-bottom: 2px solid #017FBD;
         width: fit-content;
+        font-size: 25px;
     }
 
     #certificates .showcase-certificates {
@@ -421,7 +422,7 @@ body {
 
     footer h2 {
         color: white;
-        font-size: 15px;
+        font-size: 25px;
     }
 }
 
@@ -584,6 +585,7 @@ body {
     #certificates  h1 {
         border-bottom: 2px solid #017FBD;
         width: fit-content;
+        font-size: 25px;
     }
 
     #certificates .showcase-certificates {
